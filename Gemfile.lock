@@ -44,6 +44,13 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
     hike (1.2.1)
     i18n (0.6.2)
     journey (1.0.4)
@@ -81,6 +88,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
+    rb-readline (0.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.13.0)
@@ -121,8 +129,11 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass-rails
   coffee-rails (~> 3.2.1)
+  factory_girl_rails
+  faker
   jquery-rails
   rails (= 3.2.12)
+  rb-readline
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
   sqlite3

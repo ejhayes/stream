@@ -7,9 +7,11 @@ describe PagesController do
     end
 
     it 'will sign me in with a valid user' do
-      post :handle_login, :username => 'losops', :password => 'swordfish'
+      user = FactoryGirl.create(:user)
 
-      response.should redirect_to '/'
+      post :handle_login, :username => user.username, :password => user.password
+
+      response.should redirect_to '/me'
 
       flash[:error].should be_nil
       flash[:notice].should_not be_nil

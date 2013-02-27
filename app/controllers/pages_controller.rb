@@ -7,14 +7,16 @@ class PagesController < ApplicationController
 	end
 
   def handle_login
-    if params[:username] == 'losops' && params[:password] == 'swordfish'
-      session[:user_id] = 1
-      flash[:notice] = 'Welcome'
+    user = User.find_by_username_and_password(params[:username], params[:password])
+
+    if user
+      session[:user_id] = user.id
+      flash[:notice] = "Welcome #{user.username}"
+      return redirect_to '/me'
     else
       flash[:error] = 'Invalid login'
+      return redirect_to '/'
     end
-
-    return redirect_to '/'
   end
 
 end
