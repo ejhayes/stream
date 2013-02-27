@@ -7,16 +7,21 @@ class PagesController < ApplicationController
 	end
 
   def handle_login
-    user = User.find_by_username_and_password(params[:username], params[:password])
+    user = User.authenticate(params[:username], params[:password])
 
     if user
       session[:user_id] = user.id
       flash[:notice] = "Welcome #{user.username}"
-      return redirect_to '/me'
+      return redirect_to '/'
     else
       flash[:error] = 'Invalid login'
       return redirect_to '/'
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    return redirect_to '/', :notice => 'You have been signed out'
   end
 
 end

@@ -1,2 +1,2 @@
-user = User.new(:username => 'Eric', :password => 'password')
+user = User.new(:username => 'eric', :password => 'password')
 user.save
