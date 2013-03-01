@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227051244) do
+ActiveRecord::Schema.define(:version => 20130301012927) do
+
+  create_table "follows", :force => true do |t|
+    t.integer  "from_user_id"
+    t.integer  "to_user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "follows", ["from_user_id", "to_user_id"], :name => "index_follows_on_from_user_id_and_to_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"

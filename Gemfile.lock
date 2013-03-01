@@ -52,6 +52,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.1.2)
       i18n (~> 0.5)
+    foreigner (1.4.0)
+      activerecord (>= 3.0.0)
     hike (1.2.1)
     i18n (0.6.2)
     journey (1.0.4)
@@ -133,6 +135,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   faker
+  foreigner
   jquery-rails
   rails (= 3.2.12)
   rb-readline
