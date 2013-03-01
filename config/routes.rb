@@ -5,4 +5,11 @@ Stream::Application.routes.draw do
   post '/login' => 'pages#handle_login'
 
   get '/logout' => 'pages#logout'
+
+  get '/user/:username' => 'users#show'
+  get 'user/:username/follow' => 'users#follow'
+  get 'user/:username/unfollow' => 'users#unfollow'
+
+
+  get '/users' => 'users#list_users'
 end

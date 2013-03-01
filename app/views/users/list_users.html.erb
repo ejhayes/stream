@@ -1,0 +1,12 @@
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <a href="/user/<%= user.username %>"><%= user.username %></a>
+      <% if current_user.is_following? user %>
+        <a class="btn btn-mini btn-danger" href="/user/<%= user.username %>/unfollow"><i class="icon-remove icon-white"></i> Stop Following</a>
+      <% else %>
+        <a class="btn btn-mini btn-success" href="/user/<%= user.username %>/follow"><i class="icon-ok icon-white"></i> Start Following</a>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
