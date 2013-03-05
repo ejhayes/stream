@@ -12,4 +12,6 @@ Stream::Application.routes.draw do
 
 
   get '/users' => 'users#list_users'
+
+  post '/dashboard/tweet' => 'dashboard#tweet'
 end

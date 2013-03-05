@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :users_i_follow, :through => :following, :class_name => 'User', :source => :to_user
   has_many :users_following_me, :through => :followed_by, :class_name => 'User', :source => :from_user
 
+  has_many :tweets
+
   def is_following? user
   	users_i_follow.where(:id => user.id).any?
   end

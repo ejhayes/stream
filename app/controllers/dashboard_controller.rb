@@ -5,4 +5,13 @@ class DashboardController < ApplicationController
 
 	end
 
+	def tweet
+    tweet = Tweet.new :user_id => current_user.id, :message => params[:message]
+    if tweet.save
+      return render :json => { :status => 'ok'}
+    else
+      return render :json => { :status => 'error', :error => 'unable to save tweet' }, :status => 400
+    end
+	end
+
 end
