@@ -1,1 +1,4 @@
-hello world!
+<%= form_tag({:controller => 'dashboard', :action => 'tweet'}, :method => 'POST', :id => 'tweet_form') do %>
+	<textarea name="message" id="message" required></textarea><br />
+	<button class="btn btn-info" >Send</button>
+<% end %>

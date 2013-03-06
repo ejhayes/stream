@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
 	end
 
 	def tweet
+    pp :params => params
     tweet = Tweet.new :user_id => current_user.id, :message => params[:message]
     if tweet.save
       return render :json => { :status => 'ok'}
