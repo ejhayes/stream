@@ -1,4 +1,34 @@
-<%= form_tag({:controller => 'dashboard', :action => 'tweet'}, :method => 'POST', :id => 'tweet_form') do %>
-	<textarea name="message" id="message" required></textarea><br />
-	<button class="btn btn-info" >Send</button>
-<% end %>
+<div class="container-fluid">
+
+  <div class="row-fluid">
+
+    <div class="span8">
+
+      <div class="container-fluid">
+
+        <div class="row-fluid">
+
+          <%= form_tag({:controller => 'dashboard', :action => 'tweet'}, :method => 'POST', :id => 'tweet_form') do %>
+            <textarea name="message" id="message" required></textarea><br />
+            <button class="btn btn-info" >Send</button>
+          <% end %>
+
+        </div>
+
+        <div id="holder" class="row-fluid"></div>
+
+      </div>
+
+    </div>
+
+    <div class="span4">
+
+      RIGHT HAND
+
+    </div>
+
+  </div>
+
+</div>
+
+
