@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
 	before_filter :require_authorization
 
 	def dashboard
-
+    @users = User.where("id != ?", current_user.id)
 	end
 
 	def tweet

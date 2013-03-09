@@ -1,7 +1,13 @@
 .dashboard {
 
-	#tweet_form {
-		
+	#tweet_loader {
+		background-image: url("/images/loading.gif");
+		background-repeat: none;
+		background-position: center center;
+		height: 35px;
+		width: 35px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 }

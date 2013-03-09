@@ -11,7 +11,8 @@ describe DashboardController do
 		end
 
 		it 'shows my dashboard if i am signed in' do
-			session[:user_id] = 1
+			user = FactoryGirl.create(:user)
+			session[:user_id] = user.id
 			get :dashboard
 		end
 

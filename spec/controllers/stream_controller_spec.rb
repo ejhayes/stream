@@ -57,7 +57,7 @@ describe StreamController do
         :page_size => 50,
         :page_number => 1,
         :timestamp => default_time,
-        :data => [{:message => tweet.message, :author => tweet.user.username, :timestamp => tweet.created_at.to_i}]
+        :data => ['']
       }.to_json)
 
     end

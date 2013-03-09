@@ -12,13 +12,13 @@ class UsersController < ApplicationController
   def follow
     user = User.find_by_username(params[:username])
     current_user.following.build(:to_user_id => user.id).save
-    return redirect_to '/users', :notice => "You are now following #{user.username}. Good for you!"
+    return redirect_to :back, :notice => "You are now following #{user.username}. Good for you!"
   end
 
   def unfollow
     user = User.find_by_username(params[:username])
     current_user.following.find_by_to_user_id(user.id).delete
 
-    return redirect_to '/users', :notice => "You are no longer following #{user.username} because they are lame."
+    return redirect_to :back, :notice => "You are no longer following #{user.username} because they are lame."
   end
 end

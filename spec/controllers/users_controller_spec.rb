@@ -27,6 +27,7 @@ describe UsersController do
 
       session[:user_id] = user1.id
 
+      request.env['HTTP_REFERER'] = '/'
       get :follow, :username => user2.username
 
       user1.is_following?(user2).should be_true
@@ -41,6 +42,7 @@ describe UsersController do
 
       session[:user_id] = user1.id
 
+      request.env['HTTP_REFERER'] = '/'
       get :follow, :username => user2.username
 
       user1.is_following?(user2).should be_true

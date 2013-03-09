@@ -15,14 +15,14 @@ class StreamController < ApplicationController
     pages = (tweets.total_entries / tweets.per_page).ceil
 
     out = {
-      :has_next => tweets.current_page < pages,
+      :has_next => tweets.current_page <= pages,
       :has_previous => tweets.current_page > 1,
       :page_size => tweets.per_page,
       :page_number => tweets.current_page,
       :timestamp => Time.now.to_i,
       :data => 
         tweets.map do |tweet|
-          { :author => tweet.user.username, :message => tweet.message, :timestamp => tweet.created_at.to_i }
+          render_to_string(:partial => 'includes/tweet', :layout => false, :locals => {:tweet => tweet})
         end
     }
 
